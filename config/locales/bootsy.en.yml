@@ -5,6 +5,7 @@ en:
       close: Close
       load: Load
       or: or
+      name: Image Name
       upload: Upload New Image
       submit_upload: Go
       enter_image_url: Enter a URL from the web...
