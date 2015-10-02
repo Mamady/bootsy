@@ -5,7 +5,7 @@ module Bootsy
     storage Bootsy.storage
 
     def store_dir
-      "#{Bootsy.store_dir}/#{model.class.to_s.underscore}/#{model.id}"
+      "#{Bootsy.store_dir}/posts/images/#{model.id}"
     end
 
     process resize_to_limit: [1160, 2000]
@@ -34,6 +34,14 @@ module Bootsy
 
     def extension_white_list
       %w(jpg jpeg gif png)
+    end
+
+    def filename
+      if model.image_name.present?
+        "#{model.image_name}.jpg"
+      else
+        original_filename
+      end
     end
   end
 end
